@@ -5,6 +5,7 @@ body{
 #title {
     display: flex;
     justify-content: center;
+
 }
 
 /* Menu e botões */
@@ -38,31 +39,37 @@ body{
 
     cursor: pointer;
 }
-
 .buttons-config:hover {
     background-color: rgba(69, 81, 114, 0.541);
 }
 
 /* Filtro */
-#choose-box {
+
+#select-filter {
+    display: none;
+}
+.select-style {
+    color: rgb(82, 255, 47);
+    background-color: rgba(0, 0, 0, 0.815);
+
+    border-radius: 6px;
+}
+
+#filters-options {
     display: flex;
-    justify-content: center;
-}
+    align-items: center;
 
-form input[type=radio]:checked {
-    background-color: rgb(48, 3, 48);
+    list-style: none;
 }
-
-.choose-options {
-    color: white;
+#filters-options li {
+    margin: 3px;
 }
 
 /* Card de Informações dos Personagens */
 
 .main {
-    display: block;
+    display: flex;
 }
-
 #get-cards {
     display: flex;
     flex-wrap: wrap;
@@ -70,7 +77,6 @@ form input[type=radio]:checked {
     margin-left: 1%;
     width: 100%;
 }
-
 .all-cards {
     margin: 2%;
     width: 200px;
@@ -78,7 +84,6 @@ form input[type=radio]:checked {
 
     perspective: 1000px; /* perspectiva 3D */
 }
-
 .all-cards:hover {
     margin: 3%;
     height: 570px;
@@ -91,31 +96,27 @@ form input[type=radio]:checked {
     transition: transform .4s;  /*Tempo de duração do giro*/
     transform-style: preserve-3d; /* Garante que a transformação preserve o efeito 3D */
 }
-
 .all-cards:hover .card-info {
     transform: rotateY(180deg); /* Passando o mouse sobre cartao, o filho dela (container) girará 180 graus no eixo y(eixo vertical) */
 }
+
 
 .card-front {
     position: absolute;
     width: 100%;
     backface-visibility: hidden; /* Garante que a parte de trás não aparecerá */
-    -webkit-backface-visibility: hidden;
     z-index: 1;
 
     font-size: 10px;
     margin: 10px;
-    text-align: center;
 
     color: white;
     background-color: rgba(25, 25, 26, 0.301);
 }
-
 .card-back {
     position: absolute;
     width: 100%;
     backface-visibility: hidden; /* Garante que a parte de trás não aparecerá */
-    -webkit-backface-visibility: hidden;
     z-index: 100;
     transform: rotateY(180deg);
 
@@ -127,7 +128,6 @@ form input[type=radio]:checked {
     color: white;
     background-color: rgb(35, 36, 36);
 }
-
 .card-back ul {
     list-style: none;
 
@@ -149,7 +149,6 @@ form input[type=radio]:checked {
     border-radius: 10%;
     border: 2px solid rgb(77, 211, 211);
 }
-
 .back-pic ul {
     list-style: none;
     padding: 2px;
@@ -161,13 +160,13 @@ form input[type=radio]:checked {
 
 #questions-area {
     display: none;
+    
 }
-
 #questions-area p {
     font-size: 20px;
 }
-
 .question-box {
+
     font-family: 'Thasadith', sans-serif;
     background-color: rgb(255, 255, 255);
     
@@ -176,33 +175,32 @@ form input[type=radio]:checked {
     text-align: center;
     padding: 3px;
 } 
-
 .question-box label {
     font-size: 20px;
     text-align: justify;
 }
 
 #next-button {
-    float: right;
-    width: 6%;
+        float: right;
+        width: 6%;
 
-    border:none;
-    border-radius: 20px;
-    padding: 1px;
+        border:none;
+        border-radius: 20px;
+        padding: 1px;
 
-    background-color: rgba(61, 24, 95, 0.644);
+        background-color: rgba(61, 24, 95, 0.644);
 
-    color: white;
-    font-size: 19px;
+        color: white;
+        font-size: 19px;
 
-    outline: rgba(10, 10, 36, 0.644);
+        outline: rgba(10, 10, 36, 0.644);
 }
 
 #question10 {
-    background-color: rgb(63, 63, 63); 
+   background-color: rgb(63, 63, 63); 
 
-    border-radius: 10px;
-    padding: 10px;
+   border-radius: 10px;
+   padding: 10px;
 }
 
 #result-button {
@@ -220,7 +218,6 @@ form input[type=radio]:checked {
     outline: yellowgreen;
     transition: 1s;
 }
-
 #result-button:hover {
     background-color: rgb(119, 118, 118);
 }
@@ -240,6 +237,7 @@ form input[type=radio]:checked {
     margin-bottom: 2%;
 }
 
+
 #pics-container { 
     background-color: rgba(10, 10, 36, 0.644);
     display: inline-block;
@@ -253,18 +251,17 @@ form input[type=radio]:checked {
 #div-mother-mobile {
     display: none;
 }
-
 #title-mobile {
     display: none;
 }
-
 #navigation-area-mobile {
     display: none;
 }  
-
-.main-mobile {
+.cards-container-mobile {
     display: none;
 }
+
+
 
 
 
@@ -283,13 +280,14 @@ form input[type=radio]:checked {
     }
 
 
+
     /* Menu e botões Mobile */
 
-    #navigation-area-mobile {
+        #navigation-area-mobile {
         display: flex;
         justify-content: center;
-    }
 
+    }
     #button-charac-mobile {
         width: 70%;
 
@@ -306,108 +304,110 @@ form input[type=radio]:checked {
         outline: rgba(10, 10, 36, 0.644);
         transition: 1s;
     }
-
     #button-charac-mobile:hover {
         background-color:  rgba(56, 25, 88, 0.918);
     }
 
     /* Card de Informações dos Personagens */
 
-    .main-mobile {
+    .cards-container-mobile {
         display: flex;
     }
 
     #get-cards-mobile {
-        display: flex;
-        flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 
-        margin-left: 1%;
-        width: 100%;
-    }
+    margin-left: 1%;
+    width: 100%;
+     }
 
     .all-cards-mobile {
-        margin: 12%;
-        width: 150px;
-        height: 150px;
+    margin: 12%;
+    width: 150px;
+    height: 150px;
 
-        perspective: 1000px; /* perspectiva 3D */
-    }
+    perspective: 1000px; /* perspectiva 3D */
+     }
     
     .all-cards-mobile:hover {
-        height: 320px;
+     height: 320px;
     }
-
     .card-info-mobile {
-        position: relative;
-        height: 100%;   /* 100% da altura do cartão */
-        transition: transform .4s;  /*Tempo de duração do giro*/
-        transform-style: preserve-3d; /* Garante que a transformação preserve o efeito 3D */
-    }
+    position: relative;
+    height: 100%;   /* 100% da altura do cartão */
+    transition: transform .4s;  /*Tempo de duração do giro*/
+    transform-style: preserve-3d; /* Garante que a transformação preserve o efeito 3D */
+     }
 
     .all-cards-mobile:hover .card-info-mobile {
-        transform: rotateY(180deg); /* Passando o mouse sobre cartao, o filho dela (container) girará 180 graus no eixo y(eixo vertical) */
-    }
+    transform: rotateY(180deg); /* Passando o mouse sobre cartao, o filho dela (container) girará 180 graus no eixo y(eixo vertical) */
+      }
 
     .card-front-mobile {
-        position: absolute;
-        width: 100%;
-        backface-visibility: hidden; /* Garante que a parte de trás não aparecerá */
-        -webkit-backface-visibility: hidden;
-        z-index: 1;
+    position: absolute;
+    width: 100%;
 
-        font-size: 8px;
-        margin: 10px;
-        text-align: center;
+    backface-visibility: hidden; /* Garante que a parte de trás não aparecerá */
+    /* -webkit-backface-visibility: hidden;*/
+    
+    z-index: 1;
 
-        color: white;
-        background-color: rgba(25, 25, 26, 0.301);
-    }
+    font-size: 8px;
+    margin: 10px;
+
+    color: white;
+    background-color: rgba(25, 25, 26, 0.301);
+      }
+
 
     .card-back-mobile {
-        position: absolute;
-        width: 100%;
-        backface-visibility: hidden; /* Garante que a parte de trás não aparecerá */
-        -webkit-backface-visibility: hidden;
-        z-index: 1;
-        transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
 
-        font-size: 15px;
-        font-family: 'VT323', monospace;
-        
-        border-radius: 8%;
-        padding: 9%;
-        color: white;
-        background-color: rgb(35, 36, 36);
-    }
+    backface-visibility: hidden; /* Garante que a parte de trás não aparecerá */
+    /* -webkit-backface-visibility: hidden;*/
+
+
+    z-index: 1;
+    transform: rotateY(180deg);
+
+    font-size: 15px;
+    font-family: 'VT323', monospace;
+    
+    border-radius: 8%;
+    padding: 9%;
+    color: white;
+    background-color: rgb(35, 36, 36);
+     }
 
 
     .card-back-mobile ul {
-        list-style: none;
+    list-style: none;
 
-        border-radius: 6%;
-        border: 1px solid rgb(63, 63, 63);
-        padding: 3%;
-    }
+    border-radius: 6%;
+    border: 1px solid rgb(63, 63, 63);
+    padding: 3%;
+     }
 
     .front-pic-mobile {
-        border-radius: 50%;
-        width: 90px;
-        height: 90px;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
     }
-
     .back-pic-mobile {
-        width: 100%;
-        border-radius: 10%;
-        border: 2px solid rgb(77, 211, 211);
-    }
-
+    width: 100%;
+    border-radius: 10%;
+    border: 2px solid rgb(77, 211, 211);
+     }
     .back-pic-mobile ul {
-        list-style: none;
-        padding: 2px;
-        border: 1px solid rgb(75, 74, 74);
+    list-style: none;
+    padding: 2px;
+    border: 1px solid rgb(75, 74, 74);
     }
 
   
+
     /* Desktop desabilitado no Mobile */
     #title{
         display: none;
@@ -416,9 +416,8 @@ form input[type=radio]:checked {
     #navigation-area {
         display: none;
     }
-
     #card-info {
         display: none;
     }
-}
 
+}
