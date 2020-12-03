@@ -44,6 +44,9 @@ body {
 }
 
 /* Filtro */
+#menu1 {
+    display: none;
+}
 
 #percentage-text {
     color: white;

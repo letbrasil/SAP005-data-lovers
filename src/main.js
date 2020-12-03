@@ -1,20 +1,22 @@
-import { filterStatus, filterGender } from './data.js';
+import { filterStatus, filterGender, filterText, filterOrder } from './data.js';
 
 import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(filterStatus, filterGender, data);
+console.log(filterStatus, filterGender, filterText, filterOrder, data);
 
 
 /* -------------MENU E BOTÕES DESKTOP VERSION------------ */ 
 
 // Habilitando menu de filtros
 
+const menu1 = document.getElementById("menu1")
 const charactersButton = document.getElementById("characters-button")
 charactersButton.addEventListener("click" , showFilters)
 const allFilters = document.getElementById("select-filter")
 
 function showFilters(){
   allFilters.style.display = "flex"
+  menu1.style.display = "flex"
 }
 
 
@@ -137,6 +139,52 @@ function cardGender(){
   cardsSection.innerHTML = cards
 }
 
+   // Filtro de ordenação
+
+   const orderFilter = document.getElementById("order-filter")
+   orderFilter.addEventListener("change", cardOrder)
+
+   function cardOrder(){
+
+     
+   }
+
+   // Filtro com campo de texto
+   
+   const textIn = document.getElementById("data-in")
+   textIn.addEventListener("keyup", showOptions)
+
+   function showOptions(){
+     let filterTexto = filterText(jsDocs, textIn)
+     console.log(filterTexto)
+     let cards = ""
+     for(let finder of filterTexto){
+
+      cards += `
+      <div class="all-cards">
+        <div class="card-info">
+          <div class="card-front">
+            <img class="front-pic" src="${finder.image}" alt="">
+            <h1>${finder.name}</h1>
+          </div>
+          <div class="card-back">
+            <img class="back-pic" src="${finder.image}" alt="">
+            <ul>
+              <li>Name: ${finder.name}</li>
+              <li>Status: ${finder.status}</li>
+              <li>Species: ${finder.species}</li> 
+              <li>Type: ${finder.type}</li>
+              <li>Gender: ${finder.gender}</li> 
+              <li>Origin: ${finder.origin.name}</li>
+              <li>Location: ${finder.location.name}</li>
+            </ul>
+          </div>
+        </div>  
+      </div>`;
+  }
+  const cardsSection = document.getElementById("get-cards")
+  cardsSection.innerHTML = cards
+   }
 
 /* -----------TESTE------------ */
 
@@ -161,7 +209,8 @@ confirmButton.addEventListener("click", nextQuestion)
 testButton.addEventListener("click", showTest)
 
 function showTest() {
-/* Paginação do teste */          
+/* Paginação do teste */  
+  menu1.style.display = "none"
   test.style.display = "block"
   hiding();
   document.getElementById("question1").style.display = "block";
