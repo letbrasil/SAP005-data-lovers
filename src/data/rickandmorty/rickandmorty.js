@@ -11,7 +11,7 @@ export default {
           "name": "Rick Sanchez",
           "status": "Alive",
           "species": "Human",
-          "type": "Human",
+          "type": "",
           "gender": "Male",
           "origin": {
               "name": "Earth (C-137)",
