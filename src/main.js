@@ -58,13 +58,16 @@ function showCharacters(){
 /* ---------- Filtrando ------------- */
 
   // Filtro Status
+  const divText=document.getElementById("porcentagem-text")
 
 let chooseStatus = document.getElementById("status-filter")
 chooseStatus.addEventListener("change", cardStatus)
 const statusDocs = data.results
 
-      function cardStatus() {        
-        
+      function cardStatus() { 
+      const statusQuant= filterStatus(statusDocs,chooseStatus).length       
+       const calcStatus = Math.round(((statusQuant/493)*100));
+         divText.innerHTML= `${calcStatus} % dos personagens estão ${chooseStatus.value}s`
         for(let finder of filterStatus(statusDocs, chooseStatus)){
           let cards = document.getElementById("get-cards");
           let newCard = document.createElement("div");
@@ -98,6 +101,9 @@ const statusDocs = data.results
       chooseGender.addEventListener("change", cardGender)
 
       function cardGender(){
+        const genderQuant= filterGender(statusDocs,chooseGender).length       
+       const calcGender = Math.round(((genderQuant/493)*100));
+       divText.innerHTML= `${calcGender} % dos personagens são do gênero ${chooseGender.value}`
 
       for(let finder of filterGender(statusDocs, chooseGender)){
         let cards = document.getElementById("get-cards");
