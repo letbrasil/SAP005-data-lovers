@@ -17,6 +17,7 @@ const allFilters = document.getElementById("select-filter")
 function showFilters(){
   allFilters.style.display = "flex"
   menu1.style.display = "flex"
+  test.style.display = "none"
 }
 
 
@@ -155,6 +156,7 @@ function cardGender(){
    textIn.addEventListener("keyup", showOptions)
 
    function showOptions(){
+     divText.innerHTML = " "
      let filterTexto = filterText(jsDocs, textIn)
      console.log(filterTexto)
      let cards = ""
@@ -539,18 +541,43 @@ function showResult(){
 
 
 
+
+
+
 /* --------------MENU E BOTÕES MOBILE VERSION--------------- */
 
-const characMobiButton = document.getElementById("button-charac-mobile")
-characMobiButton.addEventListener("click", showMobiCharac)
+  const changeFilter = document.getElementById("return-filters")
+  changeFilter.addEventListener("click", showMobiFilters)
 
+	const menu1Mobi = document.getElementById("menu1-mobile")
+  const charactersButtonMobi = document.getElementById("button-charac-mobile")
+  
+  charactersButtonMobi.addEventListener("click" , showMobiFilters)
+  const allMobiFilters = document.getElementById("select-filter-mobile")
+
+    function showMobiFilters() {
+      allMobiFilters.style.display = "flex"
+      menu1Mobi.style.display = "block"
+      changeFilter.style.display = "none"
+
+      const cardsSection = document.getElementById("get-cards-mobile")
+      cardsSection.innerHTML = ""
+      divTextMobi.innerHTML = " "
+    }
+
+
+// Mostrar todos os personagens
+
+const allButtonMobi = document.getElementById("all-button-mobile")
+allButtonMobi.addEventListener("click", showMobiCharac)
 
 function showMobiCharac(){
+  allMobiFilters.style.display = "none"
+  changeFilter.style.display = "inline"
+  let cards = ""
+  
 	for (let character of data.results){
-		let cardsMobi = document.getElementById("get-cards-mobile");
-    let newCardMobi = document.createElement("div");
-		cardsMobi.appendChild(newCardMobi);
-    newCardMobi.innerHTML = `
+    cards += `
       <div class="all-cards-mobile">
         <div class="card-info-mobile">
           <div class="card-front-mobile">
@@ -571,5 +598,144 @@ function showMobiCharac(){
           </div>
         </div>  
       </div>`;
-	}
+  }
+  const cardsSection = document.getElementById("get-cards-mobile")
+  cardsSection.innerHTML = cards
 }
+
+
+/* ---------- Filtrando ------------- */
+
+// Filtro Status
+
+const divTextMobi = document.getElementById("percentage-text-mobile")
+
+let chooseStatusMobi = document.getElementById("status-filter-mobile")
+chooseStatusMobi.addEventListener("change", cardMobiStatus)
+
+function cardMobiStatus(){ 
+  allMobiFilters.style.display = "none"
+  changeFilter.style.display = "inline"
+  let cards = ""
+  
+  const statusQuant= filterStatus(jsDocs,chooseStatusMobi).length       
+  const calcStatus = Math.round(((statusQuant/493)*100));
+  divTextMobi.innerHTML= `${calcStatus} % dos personagens estão ${chooseStatusMobi.value}`
+
+  for(let finder of filterStatus(jsDocs, chooseStatusMobi)){
+    cards += `
+      <div class="all-cards-mobile">
+        <div class="card-info-mobile">
+          <div class="card-front-mobile">
+            <img class="front-pic-mobile" src="${finder.image}" alt="">
+            <h1>${finder.name}</h1>
+          </div>
+          <div class="card-back-mobile">
+            <img class="back-pic-mobile" src="${finder.image}" alt="">
+            <ul>
+              <li>Name: ${finder.name}</li>
+              <li>Status: ${finder.status}</li>
+              <li>Species: ${finder.species}</li> 
+              <li>Type: ${finder.type}</li>
+              <li>Gender: ${finder.gender}</li> 
+              <li>Origin: ${finder.origin.name}</li>
+              <li>Location: ${finder.location.name}</li>
+            </ul>
+          </div>
+        </div>  
+      </div>`;
+  }
+  const cardsSection = document.getElementById("get-cards-mobile")
+  cardsSection.innerHTML = cards
+}
+
+
+// Filtro Gênero
+
+let chooseGenderMobi = document.getElementById("gender-filter-mobile")
+chooseGenderMobi.addEventListener("change", cardMobiGender)
+
+function cardMobiGender(){
+  allMobiFilters.style.display = "none"
+  changeFilter.style.display = "inline"
+  let cards = ""
+
+  const genderQuant= filterGender(jsDocs,chooseGenderMobi).length       
+  const calcGender = Math.round(((genderQuant/493)*100));
+  divTextMobi.innerHTML= `${calcGender} % dos personagens são do gênero ${chooseGenderMobi.value}`
+
+  for(let finder of filterGender(jsDocs, chooseGenderMobi)){
+    cards += `
+      <div class="all-cards-mobile">
+        <div class="card-info-mobile">
+          <div class="card-front-mobile">
+            <img class="front-pic-mobile" src="${finder.image}" alt="">
+            <h1>${finder.name}</h1>
+          </div>
+          <div class="card-back-mobile">
+            <img class="back-pic-mobile" src="${finder.image}" alt="">
+            <ul>
+              <li>Name: ${finder.name}</li>
+              <li>Status: ${finder.status}</li>
+              <li>Species: ${finder.species}</li> 
+              <li>Type: ${finder.type}</li>
+              <li>Gender: ${finder.gender}</li> 
+              <li>Origin: ${finder.origin.name}</li>
+              <li>Location: ${finder.location.name}</li>
+            </ul>
+          </div>
+        </div>  
+      </div>`;
+  }
+  const cardsSection = document.getElementById("get-cards-mobile")
+  cardsSection.innerHTML = cards
+}
+
+   // Filtro de ordenação
+
+   const orderFilterMobi = document.getElementById("order-filter-mobile")
+   orderFilterMobi.addEventListener("change", cardMobiOrder)
+
+   function cardMobiOrder(){
+   }
+
+   // Filtro com campo de texto
+   
+   const textInMobi = document.getElementById("data-in-mobile")
+   textInMobi.addEventListener("keyup", showMobiOptions)
+
+   function showMobiOptions(){
+    allMobiFilters.style.display = "none"
+    changeFilter.style.display = "inline"
+    divTextMobi.innerHTML = " "
+
+     let filterTexto = filterText(jsDocs, textInMobi)
+     console.log(filterTexto)
+     let cards = ""
+     for(let finder of filterTexto){
+
+      cards += `
+      <div class="all-cards-mobile">
+        <div class="card-info-mobile">
+          <div class="card-front-mobile">
+            <img class="front-pic-mobile" src="${finder.image}" alt="">
+            <h1>${finder.name}</h1>
+          </div>
+          <div class="card-back-mobile">
+            <img class="back-pic-mobile" src="${finder.image}" alt="">
+            <ul>
+              <li>Name: ${finder.name}</li>
+              <li>Status: ${finder.status}</li>
+              <li>Species: ${finder.species}</li> 
+              <li>Type: ${finder.type}</li>
+              <li>Gender: ${finder.gender}</li> 
+              <li>Origin: ${finder.origin.name}</li>
+              <li>Location: ${finder.location.name}</li>
+            </ul>
+          </div>
+        </div>  
+      </div>`;
+  }
+  const cardsSection = document.getElementById("get-cards-mobile")
+  cardsSection.innerHTML = cards
+   }
