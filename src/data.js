@@ -23,5 +23,5 @@ export const filterOrder = function orderFunc(docData, selectOrder){
 export const filterText = function textFunc(docData, inputText){
   let qlq = inputText.value.toUpperCase()
   console.log(qlq)
-  return docData.filter(search => search.name.toUpperCase().startsWith(qlq))
+  return docData.filter(search => search.name.toUpperCase().includes(qlq))
 }
