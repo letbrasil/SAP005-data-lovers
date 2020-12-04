@@ -142,13 +142,40 @@ function cardGender(){
 
    // Filtro de ordenação
 
+   divText.innerHTML = " "
    const orderFilter = document.getElementById("order-filter")
    orderFilter.addEventListener("change", cardOrder)
 
    function cardOrder(){
+    let cards = ""
 
-     
-   }
+    for(let finder of filterOrder(jsDocs, orderFilter)){
+      cards += `
+        <div class="all-cards">
+          <div class="card-info">
+            <div class="card-front">
+              <img class="front-pic" src="${finder.image}" alt="">
+              <h1>${finder.name}</h1>
+            </div>
+            <div class="card-back">
+              <img class="back-pic" src="${finder.image}" alt="">
+              <ul>
+                <li>Name: ${finder.name}</li>
+                <li>Status: ${finder.status}</li>
+                <li>Species: ${finder.species}</li> 
+                <li>Type: ${finder.type}</li>
+                <li>Gender: ${finder.gender}</li> 
+                <li>Origin: ${finder.origin.name}</li>
+                <li>Location: ${finder.location.name}</li>
+              </ul>
+            </div>
+          </div>  
+        </div>`;
+    }
+    const cardsSection = document.getElementById("get-cards")
+    cardsSection.innerHTML = cards
+  }
+    
 
    // Filtro com campo de texto
    
@@ -693,14 +720,45 @@ function cardMobiGender(){
 
    // Filtro de ordenação
 
+   divText.innerHTML = " "
    const orderFilterMobi = document.getElementById("order-filter-mobile")
    orderFilterMobi.addEventListener("change", cardMobiOrder)
 
    function cardMobiOrder(){
-   }
+    allMobiFilters.style.display = "none"
+    changeFilter.style.display = "inline"
+    let cards = ""
+
+    for(let finder of filterOrder(jsDocs, orderFilterMobi)){
+      cards += `
+        <div class="all-cards-mobile">
+          <div class="card-info-mobile">
+            <div class="card-front-mobile">
+              <img class="front-pic-mobile" src="${finder.image}" alt="">
+              <h1>${finder.name}</h1>
+            </div>
+            <div class="card-back-mobile">
+              <img class="back-pic-mobile" src="${finder.image}" alt="">
+              <ul>
+                <li>Name: ${finder.name}</li>
+                <li>Status: ${finder.status}</li>
+                <li>Species: ${finder.species}</li> 
+                <li>Type: ${finder.type}</li>
+                <li>Gender: ${finder.gender}</li> 
+                <li>Origin: ${finder.origin.name}</li>
+                <li>Location: ${finder.location.name}</li>
+              </ul>
+            </div>
+          </div>  
+        </div>`;
+    }
+    const cardsSection = document.getElementById("get-cards-mobile")
+    cardsSection.innerHTML = cards
+  }
+
 
    // Filtro com campo de texto
-   
+   /*
    const textInMobi = document.getElementById("data-in-mobile")
    textInMobi.addEventListener("keyup", showMobiOptions)
 
@@ -738,4 +796,4 @@ function cardMobiGender(){
   }
   const cardsSection = document.getElementById("get-cards-mobile")
   cardsSection.innerHTML = cards
-   }
+   } */
