@@ -27,8 +27,9 @@ const allButton = document.getElementById("all-button")
 allButton.addEventListener("click", showCharacters)
 
 function showCharacters(){
-  let cards = ""
   test.style.display = "none"
+  divText.innerHTML = ""
+  let cards = ""
   
 	for (let character of data.results){
     cards += `
@@ -62,7 +63,7 @@ function showCharacters(){
 
 // Filtro Status
 
-const divText=document.getElementById("percentage-text")
+const divText = document.getElementById("percentage-text")
 
 let chooseStatus = document.getElementById("status-filter")
 chooseStatus.addEventListener("change", cardStatus)
@@ -70,9 +71,9 @@ const jsDocs = data.results
 
 function cardStatus(){ 
   let cards = ""
-  const statusQuant= filterStatus(jsDocs,chooseStatus).length       
+  const statusQuant = filterStatus(jsDocs,chooseStatus).length       
   const calcStatus = Math.round(((statusQuant/493)*100));
-  divText.innerHTML= `${calcStatus} % dos personagens estão ${chooseStatus.value}`
+  divText.innerHTML = `${calcStatus}% of the characters are ${chooseStatus.value}`
 
   for(let finder of filterStatus(jsDocs, chooseStatus)){
     cards += `
@@ -109,9 +110,9 @@ chooseGender.addEventListener("change", cardGender)
 
 function cardGender(){
   let cards = ""
-  const genderQuant= filterGender(jsDocs,chooseGender).length       
+  const genderQuant = filterGender(jsDocs, chooseGender).length       
   const calcGender = Math.round(((genderQuant/493)*100));
-  divText.innerHTML= `${calcGender} % dos personagens são do gênero ${chooseGender.value}`
+  divText.innerHTML = `${calcGender}% of the characters are ${chooseGender.value}`
 
   for(let finder of filterGender(jsDocs, chooseGender)){
     cards += `
@@ -140,56 +141,18 @@ function cardGender(){
   cardsSection.innerHTML = cards
 }
 
-   // Filtro de ordenação
 
-   divText.innerHTML = " "
-   const orderFilter = document.getElementById("order-filter")
-   orderFilter.addEventListener("change", cardOrder)
+// Filtro de ordenação
 
-   function cardOrder(){
-    let cards = ""
+divText.innerHTML = ""
+const orderFilter = document.getElementById("order-filter")
+orderFilter.addEventListener("change", cardOrder)
 
-    for(let finder of filterOrder(jsDocs, orderFilter)){
-      cards += `
-        <div class="all-cards">
-          <div class="card-info">
-            <div class="card-front">
-              <img class="front-pic" src="${finder.image}" alt="">
-              <h1>${finder.name}</h1>
-            </div>
-            <div class="card-back">
-              <img class="back-pic" src="${finder.image}" alt="">
-              <ul>
-                <li>Name: ${finder.name}</li>
-                <li>Status: ${finder.status}</li>
-                <li>Species: ${finder.species}</li> 
-                <li>Type: ${finder.type}</li>
-                <li>Gender: ${finder.gender}</li> 
-                <li>Origin: ${finder.origin.name}</li>
-                <li>Location: ${finder.location.name}</li>
-              </ul>
-            </div>
-          </div>  
-        </div>`;
-    }
-    const cardsSection = document.getElementById("get-cards")
-    cardsSection.innerHTML = cards
-  }
-    
+function cardOrder(){
+  let cards = ""
 
-   // Filtro com campo de texto
-   
-   const textIn = document.getElementById("data-in")
-   textIn.addEventListener("keyup", showOptions)
-
-   function showOptions(){
-     divText.innerHTML = " "
-     let filterTexto = filterText(jsDocs, textIn)
-     console.log(filterTexto)
-     let cards = ""
-     for(let finder of filterTexto){
-
-      cards += `
+  for(let finder of filterOrder(jsDocs, orderFilter)){
+    cards += `
       <div class="all-cards">
         <div class="card-info">
           <div class="card-front">
@@ -213,7 +176,46 @@ function cardGender(){
   }
   const cardsSection = document.getElementById("get-cards")
   cardsSection.innerHTML = cards
-   }
+}
+    
+
+// Filtro com campo de texto
+   
+const textIn = document.getElementById("data-in")
+textIn.addEventListener("keyup", showOptions)
+
+function showOptions(){
+  divText.innerHTML = ""
+  let cards = ""
+  let filterSearch = filterText(jsDocs, textIn)
+
+  for(let finder of filterSearch){
+  cards += `
+    <div class="all-cards">
+      <div class="card-info">
+        <div class="card-front">
+          <img class="front-pic" src="${finder.image}" alt="">
+          <h1>${finder.name}</h1>
+        </div>
+        <div class="card-back">
+          <img class="back-pic" src="${finder.image}" alt="">
+          <ul>
+            <li>Name: ${finder.name}</li>
+            <li>Status: ${finder.status}</li>
+            <li>Species: ${finder.species}</li> 
+            <li>Type: ${finder.type}</li>
+            <li>Gender: ${finder.gender}</li> 
+            <li>Origin: ${finder.origin.name}</li>
+            <li>Location: ${finder.location.name}</li>
+          </ul>
+        </div>
+      </div>  
+    </div>`;
+  }
+  const cardsSection = document.getElementById("get-cards")
+  cardsSection.innerHTML = cards
+}
+
 
 /* -----------TESTE------------ */
 
@@ -501,6 +503,7 @@ function score() {
   }
 }
 
+
 /* Mostrando o resultado */
 
 const testResult = document.getElementById("result-button")
@@ -573,24 +576,24 @@ function showResult(){
 
 /* --------------MENU E BOTÕES MOBILE VERSION--------------- */
 
-  const changeFilter = document.getElementById("return-filters")
-  changeFilter.addEventListener("click", showMobiFilters)
+const changeFilter = document.getElementById("return-filters")
+changeFilter.addEventListener("click", showMobiFilters)
 
-	const menu1Mobi = document.getElementById("menu1-mobile")
-  const charactersButtonMobi = document.getElementById("button-charac-mobile")
-  
-  charactersButtonMobi.addEventListener("click" , showMobiFilters)
-  const allMobiFilters = document.getElementById("select-filter-mobile")
+const menu1Mobi = document.getElementById("menu1-mobile")
+const charactersButtonMobi = document.getElementById("button-charac-mobile")
 
-    function showMobiFilters() {
-      allMobiFilters.style.display = "flex"
-      menu1Mobi.style.display = "block"
-      changeFilter.style.display = "none"
+charactersButtonMobi.addEventListener("click" , showMobiFilters)
+const allMobiFilters = document.getElementById("select-filter-mobile")
 
-      const cardsSection = document.getElementById("get-cards-mobile")
-      cardsSection.innerHTML = ""
-      divTextMobi.innerHTML = " "
-    }
+function showMobiFilters() {
+  allMobiFilters.style.display = "flex"
+  menu1Mobi.style.display = "block"
+  changeFilter.style.display = "none"
+
+  const cardsSection = document.getElementById("get-cards-mobile")
+  cardsSection.innerHTML = ""
+  divTextMobi.innerHTML = ""
+}
 
 
 // Mostrar todos os personagens
@@ -645,9 +648,9 @@ function cardMobiStatus(){
   changeFilter.style.display = "inline"
   let cards = ""
   
-  const statusQuant= filterStatus(jsDocs,chooseStatusMobi).length       
+  const statusQuant = filterStatus(jsDocs,chooseStatusMobi).length       
   const calcStatus = Math.round(((statusQuant/493)*100));
-  divTextMobi.innerHTML= `${calcStatus} % dos personagens estão ${chooseStatusMobi.value}`
+  divTextMobi.innerHTML = `${calcStatus}% of the characters are ${chooseStatusMobi.value}`
 
   for(let finder of filterStatus(jsDocs, chooseStatusMobi)){
     cards += `
@@ -687,9 +690,9 @@ function cardMobiGender(){
   changeFilter.style.display = "inline"
   let cards = ""
 
-  const genderQuant= filterGender(jsDocs,chooseGenderMobi).length       
+  const genderQuant = filterGender(jsDocs, chooseGenderMobi).length       
   const calcGender = Math.round(((genderQuant/493)*100));
-  divTextMobi.innerHTML= `${calcGender} % dos personagens são do gênero ${chooseGenderMobi.value}`
+  divTextMobi.innerHTML = `${calcGender}% of the characters are ${chooseGenderMobi.value}`
 
   for(let finder of filterGender(jsDocs, chooseGenderMobi)){
     cards += `
@@ -718,61 +721,19 @@ function cardMobiGender(){
   cardsSection.innerHTML = cards
 }
 
-   // Filtro de ordenação
+// Filtro de ordenação
 
-   divText.innerHTML = " "
-   const orderFilterMobi = document.getElementById("order-filter-mobile")
-   orderFilterMobi.addEventListener("change", cardMobiOrder)
+divText.innerHTML = ""
+const orderFilterMobi = document.getElementById("order-filter-mobile")
+orderFilterMobi.addEventListener("change", cardMobiOrder)
 
-   function cardMobiOrder(){
-    allMobiFilters.style.display = "none"
-    changeFilter.style.display = "inline"
-    let cards = ""
+function cardMobiOrder(){
+  allMobiFilters.style.display = "none"
+  changeFilter.style.display = "inline"
+  let cards = ""
 
-    for(let finder of filterOrder(jsDocs, orderFilterMobi)){
-      cards += `
-        <div class="all-cards-mobile">
-          <div class="card-info-mobile">
-            <div class="card-front-mobile">
-              <img class="front-pic-mobile" src="${finder.image}" alt="">
-              <h1>${finder.name}</h1>
-            </div>
-            <div class="card-back-mobile">
-              <img class="back-pic-mobile" src="${finder.image}" alt="">
-              <ul>
-                <li>Name: ${finder.name}</li>
-                <li>Status: ${finder.status}</li>
-                <li>Species: ${finder.species}</li> 
-                <li>Type: ${finder.type}</li>
-                <li>Gender: ${finder.gender}</li> 
-                <li>Origin: ${finder.origin.name}</li>
-                <li>Location: ${finder.location.name}</li>
-              </ul>
-            </div>
-          </div>  
-        </div>`;
-    }
-    const cardsSection = document.getElementById("get-cards-mobile")
-    cardsSection.innerHTML = cards
-  }
-
-
-   // Filtro com campo de texto
-   /*
-   const textInMobi = document.getElementById("data-in-mobile")
-   textInMobi.addEventListener("keyup", showMobiOptions)
-
-   function showMobiOptions(){
-    allMobiFilters.style.display = "none"
-    changeFilter.style.display = "inline"
-    divTextMobi.innerHTML = " "
-
-     let filterTexto = filterText(jsDocs, textInMobi)
-     console.log(filterTexto)
-     let cards = ""
-     for(let finder of filterTexto){
-
-      cards += `
+  for(let finder of filterOrder(jsDocs, orderFilterMobi)){
+    cards += `
       <div class="all-cards-mobile">
         <div class="card-info-mobile">
           <div class="card-front-mobile">
@@ -796,4 +757,45 @@ function cardMobiGender(){
   }
   const cardsSection = document.getElementById("get-cards-mobile")
   cardsSection.innerHTML = cards
-   } */
+}
+
+
+// Filtro com campo de texto
+/*
+const textInMobi = document.getElementById("data-in-mobile")
+textInMobi.addEventListener("keyup", showMobiOptions)
+
+function showMobiOptions(){
+  allMobiFilters.style.display = "none"
+  changeFilter.style.display = "inline"
+  divTextMobi.innerHTML = ""
+
+  let filterSearch = filterText(jsDocs, textInMobi)
+  let cards = ""
+
+  for(let finder of filterSearch){
+    cards += `
+      <div class="all-cards-mobile">
+        <div class="card-info-mobile">
+          <div class="card-front-mobile">
+            <img class="front-pic-mobile" src="${finder.image}" alt="">
+            <h1>${finder.name}</h1>
+          </div>
+          <div class="card-back-mobile">
+            <img class="back-pic-mobile" src="${finder.image}" alt="">
+            <ul>
+              <li>Name: ${finder.name}</li>
+              <li>Status: ${finder.status}</li>
+              <li>Species: ${finder.species}</li> 
+              <li>Type: ${finder.type}</li>
+              <li>Gender: ${finder.gender}</li> 
+              <li>Origin: ${finder.origin.name}</li>
+              <li>Location: ${finder.location.name}</li>
+            </ul>
+          </div>
+        </div>  
+      </div>`;
+  }
+  const cardsSection = document.getElementById("get-cards-mobile")
+  cardsSection.innerHTML = cards
+} */
