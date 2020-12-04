@@ -17,7 +17,11 @@ export const filterGender = function genderFunc(docData, selectGender){
 }
 
 export const filterOrder = function orderFunc(docData, selectOrder){
-  
+  if(selectOrder.value === "a-z"){
+  return docData.sort((a, b) => (a.name).localeCompare(b.name) ) }
+  if(selectOrder.value === "z-a"){
+  return docData.sort((a, b) => (b.name).localeCompare(a.name) )
+  }
 }
 
 export const filterText = function textFunc(docData, inputText){
