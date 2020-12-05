@@ -278,7 +278,7 @@ function score() {
       if (document.querySelector("input[name = 'choose-box1']:checked").value == "2"){
         indice.mrPoopyButthole += 2
         indice.mrMeeseeks += 1
-        indice.tinyRick += 2
+        indice.tinyRick += 1
       }
     }
 
@@ -419,7 +419,7 @@ function score() {
 
     if(document.querySelector("input[name = 'choose-box7']:checked")){
       if (document.querySelector("input[name = 'choose-box7']:checked").value == "20"){
-        indice.mrMeeseeks += 2
+        indice.mrMeeseeks += 3
         indice.tinyRick += 1
       } 
     }
@@ -491,52 +491,53 @@ function showResult(){
       picResult.src = "./teste-personalidadeRM/img-test/rick.jpg"         
     }
     
-    if(i.zeepXanflorp > i.evilMorty && i.zeepXanflorp > i.rickSanchez && i.zeepXanflorp > i.spaceBeth && i.zeepXanflorp > i.mrPoopyButthole && i.zeepXanflorp > i.mrMeeseeks && i.zeepXanflorp > i.mortySmith && i.zeepXanflorp > i.jerrySmith && i.zeepXanflorp > i.summerSmith && i.zeepXanflorp > i.tinyRick){
+    else if(i.zeepXanflorp > i.evilMorty && i.zeepXanflorp > i.rickSanchez && i.zeepXanflorp > i.spaceBeth && i.zeepXanflorp > i.mrPoopyButthole && i.zeepXanflorp > i.mrMeeseeks && i.zeepXanflorp > i.mortySmith && i.zeepXanflorp > i.jerrySmith && i.zeepXanflorp > i.summerSmith && i.zeepXanflorp > i.tinyRick){
       menuResult.innerHTML = "Zeep Xanflorp <br><br> Main charateristics: Intelligence and selfishness <br><br> Zeep has exactly the same profile as Rick Sanchez, the difference is that the scientist of the microverse (universe created by Rick to generate energy for his ship's battery) does not know about the existence of the outside world. This fact limits him to using his intelligence to create things that make himself important."
       picResult.src = "./teste-personalidadeRM/img-test/zeep.jpg"
     }
 
-    if(i.evilMorty > i.rickSanchez && i.evilMorty > i.zeepXanflorp && i.evilMorty > i.spaceBeth && i.evilMorty > i.mrPoopyButthole && i.evilMorty > i.mrMeeseeks && i.evilMorty > i.mortySmith && i.evilMorty > i.jerrySmith && i.evilMorty > i.summerSmith && i.evilMorty > i.tinyRick){
+    else if(i.evilMorty > i.rickSanchez && i.evilMorty > i.zeepXanflorp && i.evilMorty > i.spaceBeth && i.evilMorty > i.mrPoopyButthole && i.evilMorty > i.mrMeeseeks && i.evilMorty > i.mortySmith && i.evilMorty > i.jerrySmith && i.evilMorty > i.summerSmith && i.evilMorty > i.tinyRick){
       menuResult.innerHTML = "Evil Morty <br><br> Main charateristics: Disruptive and bloodthirsty <br><br> Evil Morty is a Morty version that won the presidency at the Citadel for proposing equality between Ricks and Mortys. Although he is totally ahead of the curve for a standard Morty, he uses his speech for evil and tries to achieve his goals using violence."
       picResult.src = "./teste-personalidadeRM/img-test/evil-morty.png"
     }
 
-    if(i.spaceBeth > i.evilMorty && i.spaceBeth > i.zeepXanflorp && i.spaceBeth > i.rickSanchez && i.spaceBeth > i.mrPoopyButthole && i.spaceBeth > i.mrMeeseeks && i.spaceBeth > i.mortySmith && i.spaceBeth > i.jerrySmith && i.spaceBeth > i.summerSmith && i.spaceBeth > i.tinyRick){
+    else if(i.spaceBeth > i.evilMorty && i.spaceBeth > i.zeepXanflorp && i.spaceBeth > i.rickSanchez && i.spaceBeth > i.mrPoopyButthole && i.spaceBeth > i.mrMeeseeks && i.spaceBeth > i.mortySmith && i.spaceBeth > i.jerrySmith && i.spaceBeth > i.summerSmith && i.spaceBeth > i.tinyRick){
       menuResult.innerHTML = "Space Beth <br><br> Main charateristics: Courage and indifference <br><br> Space Beth is Rick's real daughter (or not). She abandoned everything to live adventures in the dimensions, she thinks life on Earth boring and has that 'Young Rick' vibe, engaged in missions and fighting against evil."
       picResult.src = "./teste-personalidadeRM/img-test/beth.png"
     }
 
-    if(i.mrMeeseeks > i.evilMorty && i.mrMeeseeks > i.zeepXanflorp && i.mrMeeseeks > i.spaceBeth && i.mrMeeseeks > i.mrPoopyButthole && i.mrMeeseeks > i.rickSanchez && i.mrMeeseeks > i.mortySmith && i.mrMeeseeks > i.jerrySmith && i.mrMeeseeks > i.summerSmith && i.mrMeeseeks > i.tinyRick){
+    else if(i.mrMeeseeks > i.evilMorty && i.mrMeeseeks > i.zeepXanflorp && i.mrMeeseeks > i.spaceBeth && i.mrMeeseeks > i.mrPoopyButthole && i.mrMeeseeks > i.rickSanchez && i.mrMeeseeks > i.mortySmith && i.mrMeeseeks > i.jerrySmith && i.mrMeeseeks > i.summerSmith && i.mrMeeseeks > i.tinyRick){
       menuResult.innerHTML = "Mr. Meeseeks <br><br> Main charateristics: Determination and self-destruction <br><br> Mr. Meeseeks is a rare creature that lives inside a wish box. His only purpose is to fulfill the wish of that one who activated the box, so he can finally die. Death is part of his natural cycle and he not only sees it in a positive way, but seeks it ceaselessly. Living for a long time bothers him and what he wants the most is to accomplish his goal as soon as possible."
       picResult.src = "./teste-personalidadeRM/img-test/mr-meeseeks.jpg"
     }
     
-    if(i.mrPoopyButthole > i.evilMorty && i.mrPoopyButthole > i.zeepXanflorp && i.mrPoopyButthole > i.spaceBeth && i.mrPoopyButthole > i.rickSanchez && i.mrPoopyButthole > i.mrMeeseeks && i.mrPoopyButthole > i.mortySmith && i.mrPoopyButthole > i.jerrySmith && i.mrPoopyButthole > i.summerSmith && i.mrPoopyButthole > i.tinyRick){
+    else if(i.mrPoopyButthole > i.evilMorty && i.mrPoopyButthole > i.zeepXanflorp && i.mrPoopyButthole > i.spaceBeth && i.mrPoopyButthole > i.rickSanchez && i.mrPoopyButthole > i.mrMeeseeks && i.mrPoopyButthole > i.mortySmith && i.mrPoopyButthole > i.jerrySmith && i.mrPoopyButthole > i.summerSmith && i.mrPoopyButthole > i.tinyRick){
       menuResult.innerHTML = "Mr. Poopybutthole <br><br> Main charateristics: Determination e loyalty <br><br> Mr. Poopybutthole is a superstar in his original dimension, he took refuge with the Smiths to try to live a normal life. He likes to make people around him happy. He is a character that deceives by appearance, although he is cute and friendly, this little guy has incredible strength. He loves adventures and he is always willing to help his friends."
       picResult.src = "./teste-personalidadeRM/img-test/poopybuthole.jpg"
     }
 
-    if(i.mortySmith > i.evilMorty && i.mortySmith > i.zeepXanflorp && i.mortySmith > i.spaceBeth && i.mortySmith > i.mrPoopyButthole && i.mortySmith > i.mrMeeseeks && i.mortySmith > i.rickSanchez && i.mortySmith > i.jerrySmith && i.mortySmith > i.summerSmith && i.mortySmith > i.tinyRick){
+    else if(i.mortySmith > i.evilMorty && i.mortySmith > i.zeepXanflorp && i.mortySmith > i.spaceBeth && i.mortySmith > i.mrPoopyButthole && i.mortySmith > i.mrMeeseeks && i.mortySmith > i.rickSanchez && i.mortySmith > i.jerrySmith && i.mortySmith > i.summerSmith && i.mortySmith > i.tinyRick){
       menuResult.innerHTML = "Morty Smith <br><br> Main charateristics: Generosity and insecurity <br><br> Morty Smith is Rick's grandson. Although he is not so smart as his grandfather, Morty collaborates devotedly in tasks that were given to him. Unlike his grandfather, he is very generous and he is always willing to help. Falls in love easily and tends to follow his heart more than reason."
       picResult.src = "./teste-personalidadeRM/img-test/morty.jpeg"
     }
 
-    if(i.jerrySmith > i.evilMorty && i.jerrySmith > i.zeepXanflorp && i.jerrySmith > i.spaceBeth && i.jerrySmith > i.mrPoopyButthole && i.jerrySmith > i.mrMeeseeks && i.jerrySmith > i.rickSanchez && i.jerrySmith > i.mortySmith && i.jerrySmith > i.summerSmith && i.jerrySmith > i.tinyRick){
+    else if(i.jerrySmith > i.evilMorty && i.jerrySmith > i.zeepXanflorp && i.jerrySmith > i.spaceBeth && i.jerrySmith > i.mrPoopyButthole && i.jerrySmith > i.mrMeeseeks && i.jerrySmith > i.rickSanchez && i.jerrySmith > i.mortySmith && i.jerrySmith > i.summerSmith && i.jerrySmith > i.tinyRick){
       menuResult.innerHTML = "Jerry Smith <br><br> Main charateristics: Narcissism and insecurity <br><br> Jerry Smith is Rick's son-in-law. He makes a point of taking care of his family and always takes a position when Rick threatens his position as a patriarch. He wants to have a good job and be successful. He tries to neutralize his insecurity with an excess of confidence, but he gives up easily when his goals stress him out too much. Although the series emphasizes that his intelligence is not that great, it makes him see the world with more positivity and, consequently, be happier."
       picResult.src = "./teste-personalidadeRM/img-test/jerry.jpg"
     }
 
-    if(i.summerSmith > i.evilMorty && i.summerSmith > i.zeepXanflorp && i.summerSmith > i.spaceBeth && i.summerSmith > i.mrPoopyButthole && i.summerSmith > i.mrMeeseeks && i.summerSmith > i.rickSanchez && i.summerSmith > i.jerrySmith && i.summerSmith > i.mortySmith && i.summerSmith > i.tinyRick){
+    else if(i.summerSmith > i.evilMorty && i.summerSmith > i.zeepXanflorp && i.summerSmith > i.spaceBeth && i.summerSmith > i.mrPoopyButthole && i.summerSmith > i.mrMeeseeks && i.summerSmith > i.rickSanchez && i.summerSmith > i.jerrySmith && i.summerSmith > i.mortySmith && i.summerSmith > i.tinyRick){
       menuResult.innerHTML = "Summer Smith <br><br> Main charateristics: Vanity and narcissism <br><br> Summer Smith is Rick's oldest granddaughter. She is the typical American teenager, who seeks popularity and loves social networks. Despite the stereotype, Summer is more courageous than Morty and manages to be more rational in situations of stress if compared to her younger brother."
       picResult.src = "./teste-personalidadeRM/img-test/summer.jpg"
     }
 
-    if(i.tinyRick > i.evilMorty && i.tinyRick > i.zeepXanflorp && i.tinyRick > i.spaceBeth && i.tinyRick > i.mrPoopyButthole && i.tinyRick > i.mrMeeseeks && i.tinyRick > i.rickSanchez && i.tinyRick > i.jerrySmith && i.tinyRick > i.mortySmith && i.tinyRick > i.summerSmith){
+    else if(i.tinyRick > i.evilMorty && i.tinyRick > i.zeepXanflorp && i.tinyRick > i.spaceBeth && i.tinyRick > i.mrPoopyButthole && i.tinyRick > i.mrMeeseeks && i.tinyRick > i.rickSanchez && i.tinyRick > i.jerrySmith && i.tinyRick > i.mortySmith && i.tinyRick > i.summerSmith){
       menuResult.innerHTML = "Tiny Rick <br><br> Main charateristics: Determination and self-destruction <br><br> Tiny Rick is a young clone of Rick, used to get to join his grandchildren's school and help them with a mission. Tiny Rick has the same characteristics as Rick, and because he is still young he is more positive and altruistic than his older version. However, his conscience still has traces of old-Rick, which makes him have self-destructive thoughts eventually."
       picResult.src = "./teste-personalidadeRM/img-test/tiny-rick.jpg"
     }
-    else{  menuResult.innerHTML = "Tiny Rick <br><br> Main charateristics: Determination and self-destruction <br><br> Tiny Rick is a young clone of Rick, used to get to join his grandchildren's school and help them with a mission. Tiny Rick has the same characteristics as Rick, and because he is still young he is more positive and altruistic than his older version. However, his conscience still has traces of old-Rick, which makes him have self-destructive thoughts eventually."
-    picResult.src = "./teste-personalidadeRM/img-test/tiny-rick.jpg"}
+    else {  menuResult.innerHTML = "Tiny Rick <br><br> Main charateristics: Determination and self-destruction <br><br> Tiny Rick is a young clone of Rick, used to get to join his grandchildren's school and help them with a mission. Tiny Rick has the same characteristics as Rick, and because he is still young he is more positive and altruistic than his older version. However, his conscience still has traces of old-Rick, which makes him have self-destructive thoughts eventually."
+    picResult.src = "./teste-personalidadeRM/img-test/tiny-rick.jpg"
+    }
   }
 }
 
