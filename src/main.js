@@ -7,6 +7,7 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 // Habilitando menu de filtros
 
+const test = document.getElementById("questions-area")
 const menu1 = document.getElementById("menu1")
 const charactersButton = document.getElementById("characters-button")
 charactersButton.addEventListener("click" , showFilters)
@@ -69,7 +70,7 @@ const jsDocs = data.results
 
 function cardStatus(){ 
   let cards = ""
-  const statusQuant = filterStatus(jsDocs,chooseStatus).length       
+  const statusQuant = filterStatus(jsDocs, chooseStatus.value).length       
   const calcStatus = Math.round(((statusQuant/493)*100));
   divText.innerHTML = `${calcStatus}% of the characters are ${chooseStatus.value}`
 
@@ -108,11 +109,11 @@ chooseGender.addEventListener("change", cardGender)
 
 function cardGender(){
   let cards = ""
-  const genderQuant = filterGender(jsDocs, chooseGender).length       
+  const genderQuant = filterGender(jsDocs, chooseGender.value).length       
   const calcGender = Math.round(((genderQuant/493)*100));
   divText.innerHTML = `${calcGender}% of the characters are ${chooseGender.value}`
 
-  for(let finder of filterGender(jsDocs, chooseGender)){
+  for(let finder of filterGender(jsDocs, chooseGender.value)){
     cards += `
       <div class="all-cards">
         <div class="card-info">
@@ -149,7 +150,7 @@ orderFilter.addEventListener("change", cardOrder)
 function cardOrder(){
   let cards = ""
 
-  for(let finder of filterOrder(jsDocs, orderFilter)){
+  for(let finder of filterOrder(jsDocs, orderFilter.value)){
     cards += `
       <div class="all-cards">
         <div class="card-info">
@@ -185,7 +186,7 @@ textIn.addEventListener("keyup", showOptions)
 function showOptions(){
   divText.innerHTML = ""
   let cards = ""
-  let filterSearch = filterText(jsDocs, textIn)
+  let filterSearch = filterText(jsDocs, textIn.value)
 
   for(let finder of filterSearch){
   cards += `
@@ -231,7 +232,6 @@ resultButton.addEventListener("click", score)
 
 const testButton = document.getElementById("test-button")
 const confirmButton = document.getElementById("next-button")
-const test = document.getElementById("questions-area")
 
 confirmButton.addEventListener("click", nextQuestion)
 testButton.addEventListener("click", showTest)
