@@ -74,7 +74,7 @@ function cardStatus(){
   const calcStatus = Math.round(((statusQuant/493)*100));
   divText.innerHTML = `${calcStatus}% of the characters are ${chooseStatus.value}`
 
-  for(let finder of filterStatus(jsDocs, chooseStatus)){
+  for(let finder of filterStatus(jsDocs, chooseStatus.value)){
     cards += `
       <div class="all-cards">
         <div class="card-info">
@@ -620,11 +620,11 @@ function cardMobiStatus(){
   changeFilter.style.display = "inline"
   let cards = ""
   
-  const statusQuant = filterStatus(jsDocs,chooseStatusMobi).length       
+  const statusQuant = filterStatus(jsDocs,chooseStatusMobi.value).length       
   const calcStatus = Math.round(((statusQuant/493)*100));
   divTextMobi.innerHTML = `${calcStatus}% of the characters are ${chooseStatusMobi.value}`
 
-  for(let finder of filterStatus(jsDocs, chooseStatusMobi)){
+  for(let finder of filterStatus(jsDocs, chooseStatusMobi.value)){
     cards += `
       <div class="all-cards-mobile">
         <div class="card-info-mobile">
@@ -662,11 +662,11 @@ function cardMobiGender(){
   changeFilter.style.display = "inline"
   let cards = ""
 
-  const genderQuant = filterGender(jsDocs, chooseGenderMobi).length       
+  const genderQuant = filterGender(jsDocs, chooseGenderMobi.value).length       
   const calcGender = Math.round(((genderQuant/493)*100));
   divTextMobi.innerHTML = `${calcGender}% of the characters are ${chooseGenderMobi.value}`
 
-  for(let finder of filterGender(jsDocs, chooseGenderMobi)){
+  for(let finder of filterGender(jsDocs, chooseGenderMobi.value)){
     cards += `
       <div class="all-cards-mobile">
         <div class="card-info-mobile">
