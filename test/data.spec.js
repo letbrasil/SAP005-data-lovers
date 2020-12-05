@@ -1,23 +1,39 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterStatus, filterGender, filterOrder, filterText } from '../src/data.js';
 
 
-describe('example', () => {
+describe('filterStatus', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterStatus).toBe('function');
   });
-
+  /*
   it('returns `example`', () => {
     expect(example()).toBe('example');
-  });
+  }); */
 });
 
 
-describe('anotherExample', () => {
+describe('filterGender', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof filterGender).toBe('function');
   });
-
+  /*
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
+  }); */
+});
+
+
+describe('filterOrder', () => {
+  it('is a function', () => {
+    expect(typeof filterOrder).toBe('function');
   });
+
+});
+
+
+describe('filterText', () => {
+  it('is a function', () => {
+    expect(typeof filterText).toBe('function');
+  });
+  
 });
