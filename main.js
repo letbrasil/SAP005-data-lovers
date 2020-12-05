@@ -2,8 +2,6 @@ import { filterStatus, filterGender, filterText, filterOrder } from './data.js';
 
 import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(filterStatus, filterGender, filterText, filterOrder, data);
-
 
 /* -------------MENU E BOTÕES DESKTOP VERSION------------ */ 
 
@@ -219,11 +217,10 @@ function showOptions(){
 
 /* -----------TESTE------------ */
 
-let totalCharac = 0
 let characList = { 
   "allList" : [{
       "rickSanchez": 0 ,  "evilMorty" : 0 , "zeepXanflorp": 0 ,
-      "bethEspacial" : 0 , "mrPoopyButthole" : 0 , "mrMeeseeks" : 0 ,
+      "spaceBeth" : 0 , "mrPoopyButthole" : 0 , "mrMeeseeks" : 0 ,
       "mortySmith" : 0 , "summerSmith" : 0 , "jerrySmith" : 0 ,
       "tinyRick" : 0
   }]
@@ -273,8 +270,7 @@ function score() {
         indice.rickSanchez += 1
         indice.zeepXanflorp += 1
         indice.evilMorty += 1
-        indice.bethEspacial += 1
-        totalCharac += 4
+        indice.spaceBeth += 1
       }
     }
 
@@ -283,7 +279,6 @@ function score() {
         indice.mrPoopyButthole += 2
         indice.mrMeeseeks += 1
         indice.tinyRick += 2
-        totalCharac += 5
       }
     }
 
@@ -292,7 +287,6 @@ function score() {
         indice.mortySmith += 1
         indice.summerSmith += 1
         indice.jerrySmith += 1
-        totalCharac += 3
       }
     }
 
@@ -301,17 +295,15 @@ function score() {
         indice.rickSanchez += 2
         indice.zeepXanflorp  += 1
         indice.evilMorty += 1
-        totalCharac += 4
       }
     }
 
     if(document.querySelector("input[name = 'choose-box2']:checked")){
       if (document.querySelector("input[name = 'choose-box2']:checked").value == "5"){
-        indice.bethEspacial += 1
+        indice.spaceBeth += 1
         indice.mrPoopyButthole += 2
         indice.mrMeeseeks += 1
         indice.tinyRick += 2
-        totalCharac += 6
       }
     }
 
@@ -320,7 +312,6 @@ function score() {
         indice.mortySmith += 1
         indice.summerSmith += 1
         indice.jerrySmith += 1
-        totalCharac += 3
       }
     }
 
@@ -329,15 +320,13 @@ function score() {
         indice.rickSanchez += 1
         indice.evilMorty += 1
         indice.zeepXanflorp+= 1
-        indice.bethEspacial += 1
-        totalCharac += 4
+        indice.spaceBeth += 1
       }
     }
 
     if(document.querySelector("input[name = 'choose-box3']:checked")){
       if (document.querySelector("input[name = 'choose-box3']:checked").value == "8"){
         indice.summerSmith += 2
-        totalCharac += 2
       }
     }       
 
@@ -348,7 +337,6 @@ function score() {
         indice.mortySmith += 1
         indice.jerrySmith += 1
         indice.tinyRick += 1
-        totalCharac += 5
       }
     }  
 
@@ -356,25 +344,22 @@ function score() {
       if (document.querySelector("input[name = 'choose-box4']:checked").value == "10"){
         indice.evilMorty += 2
         indice.zeepXanflorp += 1
-        totalCharac += 3
       }
     } 
        
     if(document.querySelector("input[name = 'choose-box4']:checked")){
       if (document.querySelector("input[name = 'choose-box4']:checked").value == "11"){
         indice.rickSanchez += 1
-        indice.bethEspacial += 1
+        indice.spaceBeth += 1
         indice.mrPoopyButthole += 1
         indice.mortySmith += 1
         indice.tinyRick += 1
-        totalCharac += 5
       }
     }
 
     if(document.querySelector("input[name = 'choose-box4']:checked")){
       if (document.querySelector("input[name = 'choose-box4']:checked").value == "12"){
         indice.summerSmith += 2
-        totalCharac += 2
       }
     }
 
@@ -382,16 +367,14 @@ function score() {
       if (document.querySelector("input[name = 'choose-box5']:checked").value == "13"){
         indice.evilMorty += 2
         indice.zeepXanflorp += 2
-        totalCharac += 4
       }
     }  
        
     if(document.querySelector("input[name = 'choose-box5']:checked")){
       if (document.querySelector("input[name = 'choose-box5']:checked").value == "14"){
-        indice.bethEspacial += 1
+        indice.spaceBeth += 1
         indice.mrPoopyButthole += 1
         indice.tinyRick += 1
-        totalCharac += 3
       }
     }
 
@@ -400,7 +383,6 @@ function score() {
         indice.rickSanchez += 1
         indice.mortySmith += 1
         indice.jerrySmith += 1
-        totalCharac += 3
       }
     }
 
@@ -408,15 +390,13 @@ function score() {
       if (document.querySelector("input[name = 'choose-box6']:checked").value == "16"){
         indice.rickSanchez += 1
         indice.evilMorty += 1
-        indice.bethEspacial += 1
-        totalCharac += 3
+        indice.spaceBeth += 1
       }
     }
 
     if(document.querySelector("input[name = 'choose-box6']:checked")){
       if (document.querySelector("input[name = 'choose-box6']:checked").value == "17"){
         indice.mrMeeseeks += 2
-        totalCharac += 2
       }
     }
 
@@ -426,16 +406,14 @@ function score() {
         indice.summerSmith += 1
         indice.jerrySmith += 1
         indice.zeepXanflorp  += 2
-        totalCharac += 5
       }
     }
 
     if(document.querySelector("input[name = 'choose-box7']:checked")){
       if (document.querySelector("input[name = 'choose-box7']:checked").value == "19"){
         indice.rickSanchez += 1
-        indice.bethEspacial += 1
+        indice.spaceBeth += 1
         indice.mrPoopyButthole += 1   
-        totalCharac += 3
       }
     }
 
@@ -443,7 +421,6 @@ function score() {
       if (document.querySelector("input[name = 'choose-box7']:checked").value == "20"){
         indice.mrMeeseeks += 2
         indice.tinyRick += 1
-        totalCharac += 3
       } 
     }
 
@@ -452,42 +429,36 @@ function score() {
         indice.mortySmith += 1
         indice.summerSmith += 1
         indice.jerrySmith += 1
-        totalCharac += 3
       }
     }
 
     if(document.querySelector("input[name = 'choose-box8']:checked")){
       if (document.querySelector("input[name = 'choose-box8']:checked").value == "22"){
-        indice.bethEspacial += 2
-        totalCharac += 2
+        indice.spaceBeth += 2
       }
     }
 
     if(document.querySelector("input[name = 'choose-box8']:checked")){
       if (document.querySelector("input[name = 'choose-box8']:checked").value == "23"){
         indice.jerrySmith += 2
-        totalCharac += 2
       }
     }
 
     if(document.querySelector("input[name = 'choose-box8']:checked")){
       if (document.querySelector("input[name = 'choose-box8']:checked").value == "24"){
         indice.mortySmith += 2
-        totalCharac += 2
       }
     }
 
     if(document.querySelector("input[name = 'choose-box9']:checked")){
       if (document.querySelector("input[name = 'choose-box9']:checked").value == "25"){
         indice.mrMeeseeks += 2
-        totalCharac += 2
       }
     }
 
     if(document.querySelector("input[name = 'choose-box9']:checked")){
       if (document.querySelector("input[name = 'choose-box9']:checked").value == "26"){
         indice.rickSanchez += 2
-        totalCharac += 2
       }
     }
 
@@ -495,11 +466,9 @@ function score() {
       if (document.querySelector("input[name = 'choose-box9']:checked").value == "27"){
         indice.evilMorty += 2
         indice.zeepXanflorp += 2 
-        totalCharac += 4
       }
     }
-    console.log("Rick: " + indice.rickSanchez, "Evil Morty: " + indice.evilMorty, "Zeep: " + indice.zeepXanflorp
-    ,"Beth Espacial: " + indice.bethEspacial,"Sr. Meeseeks: " + indice.mrMeeseeks, "Sr.Bunda Cagada: " + indice.mrPoopyButthole, "Tiny Rick: " + indice.tinyRick, "Morty: " + indice.mortySmith, "Jerry: " + indice.jerrySmith, "summer: " + indice.summerSmith)
+    // console.log("Rick: " + indice.rickSanchez, "Evil Morty: " + indice.evilMorty, "Zeep: " + indice.zeepXanflorp, "Space Beth: " + indice.spaceBeth,"Sr. Meeseeks: " + indice.mrMeeseeks, "Sr.Bunda Cagada: " + indice.mrPoopyButthole, "Tiny Rick: " + indice.tinyRick, "Morty: " + indice.mortySmith, "Jerry: " + indice.jerrySmith, "summer: " + indice.summerSmith)
   }
 }
 
@@ -517,53 +486,53 @@ function showResult(){
   testResult.style.display = "none"
 
   for(let i of characList.allList){
-    if(i.rickSanchez > i.evilMorty && i.rickSanchez > i.zeepXanflorp && i.rickSanchez > i.bethEspacial && i.rickSanchez > i.mrPoopyButthole && i.rickSanchez > i.mrMeeseeks && i.rickSanchez > i.mortySmith && i.rickSanchez > i.jerrySmith && i.rickSanchez > i.summerSmith){
-      menuResult.innerHTML = "Rick Sanchez <br><br> Principais características: Inteligência e egoísmo <br><br> Rick é extremamente inteligente, na juventude foi um aventureiro das galáxias, mas atualmente ele só quer viver em paz e usar sua inteligência criando coisas para seu próprio benefício. Embora goste de aventuras de alto risco, acha uma bobagem arriscar a própria vida para ajudar alguém ou algum planeta que não seja do seu interesse."
+    if(i.rickSanchez > i.evilMorty && i.rickSanchez > i.zeepXanflorp && i.rickSanchez > i.spaceBeth && i.rickSanchez > i.mrPoopyButthole && i.rickSanchez > i.mrMeeseeks && i.rickSanchez > i.mortySmith && i.rickSanchez > i.jerrySmith && i.rickSanchez > i.summerSmith){
+      menuResult.innerHTML = "Rick Sanchez <br><br> Main charateristics: Intelligence and selfishness <br><br> Rick is extremely intelligent. In his youth he was an adventurer of the galaxies, but currently he just wants to live in peace and to use his intelligence to create things for his own benefit. Although he likes high-risk adventures, he thinks it is foolishness to risk his own life to help someone or some planet that is not of his interest."
       picResult.src = "./teste-personalidadeRM/img-test/rick.jpg"         
     }
     
-    if(i.zeepXanflorp > i.evilMorty && i.zeepXanflorp > i.rickSanchez && i.zeepXanflorp > i.bethEspacial && i.zeepXanflorp > i.mrPoopyButthole && i.zeepXanflorp > i.mrMeeseeks && i.zeepXanflorp > i.mortySmith && i.zeepXanflorp > i.jerrySmith && i.zeepXanflorp > i.summerSmith && i.zeepXanflorp > i.tinyRick){
-      menuResult.innerHTML = "Zeep Xanflorp <br><br> Principais caracteristicas: Inteligência e egoísmo <br><br> Zeep tem exatamente o mesmo perfil de Rick Sanchez, a diferença está no fato do cientista do microverso (universo criado por Rick para gerar energia para a bateria da sua nave) não ter conhecimento do mundo exterior. Isso o limita a usar sua inteligência para criar coisas que o torne importante."
+    if(i.zeepXanflorp > i.evilMorty && i.zeepXanflorp > i.rickSanchez && i.zeepXanflorp > i.spaceBeth && i.zeepXanflorp > i.mrPoopyButthole && i.zeepXanflorp > i.mrMeeseeks && i.zeepXanflorp > i.mortySmith && i.zeepXanflorp > i.jerrySmith && i.zeepXanflorp > i.summerSmith && i.zeepXanflorp > i.tinyRick){
+      menuResult.innerHTML = "Zeep Xanflorp <br><br> Main charateristics: Intelligence and selfishness <br><br> Zeep has exactly the same profile as Rick Sanchez, the difference is that the scientist of the microverse (universe created by Rick to generate energy for his ship's battery) does not know about the existence of the outside world. This fact limits him to using his intelligence to create things that make himself important."
       picResult.src = "./teste-personalidadeRM/img-test/zeep.jpg"
     }
 
-    if(i.evilMorty > i.rickSanchez && i.evilMorty > i.zeepXanflorp && i.evilMorty > i.bethEspacial && i.evilMorty > i.mrPoopyButthole && i.evilMorty > i.mrMeeseeks && i.evilMorty > i.mortySmith && i.evilMorty > i.jerrySmith && i.evilMorty > i.summerSmith && i.evilMorty > i.tinyRick){
-      menuResult.innerHTML = "Evil Morty <br><br> Principais características: Disruptivo e sanguinário <br><br> Evil Morty é uma versão Morty que ganhou a presidência na Cidadela por propor a igualdade entre Ricks e Mortys. Embora ele seja totalmente fora da curva para um Morty padrão, ele usa seu discurso para o mal e tenta alcançar seu objetos usando violência."
+    if(i.evilMorty > i.rickSanchez && i.evilMorty > i.zeepXanflorp && i.evilMorty > i.spaceBeth && i.evilMorty > i.mrPoopyButthole && i.evilMorty > i.mrMeeseeks && i.evilMorty > i.mortySmith && i.evilMorty > i.jerrySmith && i.evilMorty > i.summerSmith && i.evilMorty > i.tinyRick){
+      menuResult.innerHTML = "Evil Morty <br><br> Main charateristics: Disruptive and bloodthirsty <br><br> Evil Morty is a Morty version that won the presidency at the Citadel for proposing equality between Ricks and Mortys. Although he is totally ahead of the curve for a standard Morty, he uses his speech for evil and tries to achieve his goals using violence."
       picResult.src = "./teste-personalidadeRM/img-test/evil-morty.png"
     }
 
-    if(i.bethEspacial > i.evilMorty && i.bethEspacial > i.zeepXanflorp && i.bethEspacial > i.rickSanchez && i.bethEspacial > i.mrPoopyButthole && i.bethEspacial > i.mrMeeseeks && i.bethEspacial > i.mortySmith && i.bethEspacial > i.jerrySmith && i.bethEspacial > i.summerSmith && i.bethEspacial > i.tinyRick){
-      menuResult.innerHTML = "Beth Espacial <br><br> Principais características: Coragem e indiferença <br><br> Beth Espacial é a verdadeira filha (ou não) de Rick. Ela abandonou tudo para viver aventuras nas dimensões, acha a vida na Terra entendiante e segue a linha 'Rick Jovem', empenhada em missões e lutando contra o mal."
+    if(i.spaceBeth > i.evilMorty && i.spaceBeth > i.zeepXanflorp && i.spaceBeth > i.rickSanchez && i.spaceBeth > i.mrPoopyButthole && i.spaceBeth > i.mrMeeseeks && i.spaceBeth > i.mortySmith && i.spaceBeth > i.jerrySmith && i.spaceBeth > i.summerSmith && i.spaceBeth > i.tinyRick){
+      menuResult.innerHTML = "Space Beth <br><br> Main charateristics: Courage and indifference <br><br> Space Beth is Rick's real daughter (or not). She abandoned everything to live adventures in the dimensions, she thinks life on Earth boring and has that 'Young Rick' vibe, engaged in missions and fighting against evil."
       picResult.src = "./teste-personalidadeRM/img-test/beth.png"
     }
 
-    if(i.mrMeeseeks > i.evilMorty && i.mrMeeseeks > i.zeepXanflorp && i.mrMeeseeks > i.bethEspacial && i.mrMeeseeks > i.mrPoopyButthole && i.mrMeeseeks > i.rickSanchez && i.mrMeeseeks > i.mortySmith && i.mrMeeseeks > i.jerrySmith && i.mrMeeseeks > i.summerSmith && i.mrMeeseeks > i.tinyRick){
-      menuResult.innerHTML = "Sr.Meeseeks <br><br> Principais Características: Determinação e Autodestruição <br><br> Sr. Meeseeks é uma criatura rara que vive dentro de uma caixa de desejos. Seu único objetivo é realizar o desejo de quem acionou a caixa para finalmente morrer. A morte faz parte do seu ciclo natural e ele não só a enxerga de uma forma positiva, como a busca incessantemente. Viver por muito tempo o incomoda e o que ele mais deseja é concluir logo seu objetivo."
+    if(i.mrMeeseeks > i.evilMorty && i.mrMeeseeks > i.zeepXanflorp && i.mrMeeseeks > i.spaceBeth && i.mrMeeseeks > i.mrPoopyButthole && i.mrMeeseeks > i.rickSanchez && i.mrMeeseeks > i.mortySmith && i.mrMeeseeks > i.jerrySmith && i.mrMeeseeks > i.summerSmith && i.mrMeeseeks > i.tinyRick){
+      menuResult.innerHTML = "Mr. Meeseeks <br><br> Main charateristics: Determination and self-destruction <br><br> Mr. Meeseeks is a rare creature that lives inside a wish box. His only purpose is to fulfill the wish of that one who activated the box, so he can finally die. Death is part of his natural cycle and he not only sees it in a positive way, but seeks it ceaselessly. Living for a long time bothers him and what he wants the most is to accomplish his goal as soon as possible."
       picResult.src = "./teste-personalidadeRM/img-test/mr-meeseeks.jpg"
     }
     
-    if(i.mrPoopyButthole > i.evilMorty && i.mrPoopyButthole > i.zeepXanflorp && i.mrPoopyButthole > i.bethEspacial && i.mrPoopyButthole > i.rickSanchez && i.mrPoopyButthole > i.mrMeeseeks && i.mrPoopyButthole > i.mortySmith && i.mrPoopyButthole > i.jerrySmith && i.mrPoopyButthole > i.summerSmith && i.mrPoopyButthole > i.tinyRick){
-      menuResult.innerHTML = "Sr.Bunda Cagada <br><br> Principais Características: Determinação e Lealdade <br><br> Sr. Bunda Cagada é um superstar em sua dimensão de origem, se refugiou com os Smiths para tentar viver uma vida normal. Gosta de deixar as pessoas a sua volta felizes. É um personagem que engana pela aparência, embora seja fofinho e amigável, este baixinho tem uma força incrível. Ele adora aventuras e está sempre disposto a ajudar seus amigos."
+    if(i.mrPoopyButthole > i.evilMorty && i.mrPoopyButthole > i.zeepXanflorp && i.mrPoopyButthole > i.spaceBeth && i.mrPoopyButthole > i.rickSanchez && i.mrPoopyButthole > i.mrMeeseeks && i.mrPoopyButthole > i.mortySmith && i.mrPoopyButthole > i.jerrySmith && i.mrPoopyButthole > i.summerSmith && i.mrPoopyButthole > i.tinyRick){
+      menuResult.innerHTML = "Mr. Poopybutthole <br><br> Main charateristics: Determination e loyalty <br><br> Mr. Poopybutthole is a superstar in his original dimension, he took refuge with the Smiths to try to live a normal life. He likes to make people around him happy. He is a character that deceives by appearance, although he is cute and friendly, this little guy has incredible strength. He loves adventures and he is always willing to help his friends."
       picResult.src = "./teste-personalidadeRM/img-test/poopybuthole.jpg"
     }
 
-    if(i.mortySmith > i.evilMorty && i.mortySmith > i.zeepXanflorp && i.mortySmith > i.bethEspacial && i.mortySmith > i.mrPoopyButthole && i.mortySmith > i.mrMeeseeks && i.mortySmith > i.rickSanchez && i.mortySmith > i.jerrySmith && i.mortySmith > i.summerSmith && i.mortySmith > i.tinyRick){
-      menuResult.innerHTML = "Morty Smith <br><br> Principais características: Generosidade e Insegurança <br><br> Morty Smith é o neto de Rick. Apesar de não ter a mesma inteligência do avô, Morty colabora dedicadamente em alguma tarefa que lhe foi dada. Ao contrário de seu avô, ele é muito generoso e sempre está disposto a ajudar. Se apaixona fácil e tende a seguir mais o coração que a razão."
+    if(i.mortySmith > i.evilMorty && i.mortySmith > i.zeepXanflorp && i.mortySmith > i.spaceBeth && i.mortySmith > i.mrPoopyButthole && i.mortySmith > i.mrMeeseeks && i.mortySmith > i.rickSanchez && i.mortySmith > i.jerrySmith && i.mortySmith > i.summerSmith && i.mortySmith > i.tinyRick){
+      menuResult.innerHTML = "Morty Smith <br><br> Main charateristics: Generosity and insecurity <br><br> Morty Smith is Rick's grandson. Although he is not so smart as his grandfather, Morty collaborates devotedly in tasks that were given to him. Unlike his grandfather, he is very generous and he is always willing to help. Falls in love easily and tends to follow his heart more than reason."
       picResult.src = "./teste-personalidadeRM/img-test/morty.jpeg"
     }
 
-    if(i.jerrySmith > i.evilMorty && i.jerrySmith > i.zeepXanflorp && i.jerrySmith > i.bethEspacial && i.jerrySmith > i.mrPoopyButthole && i.jerrySmith > i.mrMeeseeks && i.jerrySmith > i.rickSanchez && i.jerrySmith > i.mortySmith && i.jerrySmith > i.summerSmith && i.jerrySmith > i.tinyRick){
-      menuResult.innerHTML = "Jerry Smith <br><br> Principais características: Narcisismo e Insegurança <br><br> Jerry Smith é o genro de Rick. Ele faz questão de cuidar da família e sempre se posiciona quando Rick ameaça sua posição como patriarca. Quer ter um bom emprego e ser bem sucedido. Tenta anular sua insegurança com um excesso de confiança, porém desiste fácil dos objetivos quando estes o estressam muito. Embora seja evidenciado na série que sua inteligência não é das melhores, isso o faz ver o mundo com mais positividade e, consequentemente, ser mais feliz."
+    if(i.jerrySmith > i.evilMorty && i.jerrySmith > i.zeepXanflorp && i.jerrySmith > i.spaceBeth && i.jerrySmith > i.mrPoopyButthole && i.jerrySmith > i.mrMeeseeks && i.jerrySmith > i.rickSanchez && i.jerrySmith > i.mortySmith && i.jerrySmith > i.summerSmith && i.jerrySmith > i.tinyRick){
+      menuResult.innerHTML = "Jerry Smith <br><br> Main charateristics: Narcissism and insecurity <br><br> Jerry Smith is Rick's son-in-law. He makes a point of taking care of his family and always takes a position when Rick threatens his position as a patriarch. He wants to have a good job and be successful. He tries to neutralize his insecurity with an excess of confidence, but he gives up easily when his goals stress him out too much. Although the series emphasizes that his intelligence is not that great, it makes him see the world with more positivity and, consequently, be happier."
       picResult.src = "./teste-personalidadeRM/img-test/jerry.jpg"
     }
 
-    if(i.summerSmith > i.evilMorty && i.summerSmith > i.zeepXanflorp && i.summerSmith > i.bethEspacial && i.summerSmith > i.mrPoopyButthole && i.summerSmith > i.mrMeeseeks && i.summerSmith > i.rickSanchez && i.summerSmith > i.jerrySmith && i.summerSmith > i.mortySmith && i.summerSmith > i.tinyRick){
-      menuResult.innerHTML = "Summer Smith <br><br> Principais características: Vaidade e Narcisismo <br><br> Summer Smith é a neta mais velha de Rick. É a típica adolescente americana, busca a popularidade e adora as redes sociais. Apesar do estereótipo, Summer é mais corajosa que Morty e consegue ser mais racional em situações de estresse comparada ao irmão caçula."
+    if(i.summerSmith > i.evilMorty && i.summerSmith > i.zeepXanflorp && i.summerSmith > i.spaceBeth && i.summerSmith > i.mrPoopyButthole && i.summerSmith > i.mrMeeseeks && i.summerSmith > i.rickSanchez && i.summerSmith > i.jerrySmith && i.summerSmith > i.mortySmith && i.summerSmith > i.tinyRick){
+      menuResult.innerHTML = "Summer Smith <br><br> Main charateristics: Vanity and narcissism <br><br> Summer Smith is Rick's oldest granddaughter. She is the typical American teenager, who seeks popularity and loves social networks. Despite the stereotype, Summer is more courageous than Morty and manages to be more rational in situations of stress if compared to her younger brother."
       picResult.src = "./teste-personalidadeRM/img-test/summer.jpg"
     }
 
-    if(i.tinyRick > i.evilMorty && i.tinyRick > i.zeepXanflorp && i.tinyRick > i.bethEspacial && i.tinyRick > i.mrPoopyButthole && i.tinyRick > i.mrMeeseeks && i.tinyRick > i.rickSanchez && i.tinyRick > i.jerrySmith && i.tinyRick > i.mortySmith && i.tinyRick > i.summerSmith){
-      menuResult.innerHTML = "Tiny Rick <br><br> Principais características: Determinação e Autodestruição <br><br> Tiny Rick é um clone jovem de Rick, usado para conseguir ingressar no colégio dos netos e ajudá-los com uma missão. Tiny Rick tem as mesmas características de Rick, sendo que por ser mais jovem ele é mais positivo e altruísta. Contudo sua consciência ainda tem resquícios do velho Rick, o que faz ele ter pensamentos autodestrutivos eventualmente."
+    if(i.tinyRick > i.evilMorty && i.tinyRick > i.zeepXanflorp && i.tinyRick > i.spaceBeth && i.tinyRick > i.mrPoopyButthole && i.tinyRick > i.mrMeeseeks && i.tinyRick > i.rickSanchez && i.tinyRick > i.jerrySmith && i.tinyRick > i.mortySmith && i.tinyRick > i.summerSmith){
+      menuResult.innerHTML = "Tiny Rick <br><br> Main charateristics: Determination and self-destruction <br><br> Tiny Rick is a young clone of Rick, used to get to join his grandchildren's school and help them with a mission. Tiny Rick has the same characteristics as Rick, and because he is still young he is more positive and altruistic than his older version. However, his conscience still has traces of old-Rick, which makes him have self-destructive thoughts eventually."
       picResult.src = "./teste-personalidadeRM/img-test/tiny-rick.jpg"
     }
   }
