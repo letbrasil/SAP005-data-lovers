@@ -535,6 +535,8 @@ function showResult(){
       menuResult.innerHTML = "Tiny Rick <br><br> Main charateristics: Determination and self-destruction <br><br> Tiny Rick is a young clone of Rick, used to get to join his grandchildren's school and help them with a mission. Tiny Rick has the same characteristics as Rick, and because he is still young he is more positive and altruistic than his older version. However, his conscience still has traces of old-Rick, which makes him have self-destructive thoughts eventually."
       picResult.src = "./teste-personalidadeRM/img-test/tiny-rick.jpg"
     }
+    else{  menuResult.innerHTML = "Tiny Rick <br><br> Main charateristics: Determination and self-destruction <br><br> Tiny Rick is a young clone of Rick, used to get to join his grandchildren's school and help them with a mission. Tiny Rick has the same characteristics as Rick, and because he is still young he is more positive and altruistic than his older version. However, his conscience still has traces of old-Rick, which makes him have self-destructive thoughts eventually."
+    picResult.src = "./teste-personalidadeRM/img-test/tiny-rick.jpg"}
   }
 }
 
