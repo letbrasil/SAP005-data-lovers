@@ -22,6 +22,7 @@ changeFilter.addEventListener("click", backFilterMenu)
 function backFilterMenu(){
 
   const cardsSection = document.getElementById("get-cards")
+  cardsSection.style.display = "none"
   cardsSection.innerHTML = ""
 
   changeFilter.style.display = "none"
@@ -64,6 +65,7 @@ function showFilters(){
       </div>`;
   }
   const cardsSection = document.getElementById("get-cards")
+  cardsSection.style.display = "flex"
   cardsSection.innerHTML = cards
   }
 }
@@ -104,6 +106,7 @@ function showCharacters(){
       </div>`;
   }
   const cardsSection = document.getElementById("get-cards")
+  cardsSection.style.display = "flex"
   cardsSection.innerHTML = cards
   
   if( widthViewport <= 500) {
@@ -153,6 +156,7 @@ function cardStatus(){
       </div>`;
   }
   const cardsSection = document.getElementById("get-cards")
+  cardsSection.style.display = "flex"
   cardsSection.innerHTML = cards
 
   if( widthViewport <= 500) {
@@ -198,6 +202,7 @@ function cardGender(){
       </div>`;
   }
   const cardsSection = document.getElementById("get-cards")
+  cardsSection.style.display = "flex"
   cardsSection.innerHTML = cards
 
   if( widthViewport <= 500) {
@@ -241,6 +246,7 @@ function cardOrder(){
       </div>`;
   }
   const cardsSection = document.getElementById("get-cards")
+  cardsSection.style.display = "flex"
   cardsSection.innerHTML = cards
 
   if( widthViewport <= 500) {
@@ -284,6 +290,7 @@ function showOptions(){
     </div>`;
   }
   const cardsSection = document.getElementById("get-cards")
+  cardsSection.style.display = "flex"
   cardsSection.innerHTML = cards
 }
 
