@@ -442,13 +442,12 @@ body {
     #get-cards {
         display: none;
         flex-wrap: wrap;
-
         margin-left: 1%;
         width: 200px;
     }
 
     .all-cards {
-        margin: 2%;
+        margin: 2px;
         width: 150px;
         height: 150px;
 
@@ -488,7 +487,7 @@ body {
 
     .card-back {
         position: absolute;
-        width: 100%;
+        width: 160px;
 
         backface-visibility: hidden; /* Garante que a parte de trás não aparecerá */
         -webkit-backface-visibility: hidden;
@@ -499,7 +498,7 @@ body {
         font-family: 'VT323', monospace;
         
         border-radius: 8%;
-        padding: 9%;
+        padding: 6%;
         color: white;
         background-color: rgb(35, 36, 36);
     }
