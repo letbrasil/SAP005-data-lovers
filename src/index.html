@@ -24,6 +24,11 @@
         <div id="title">
             <img id="logo-rickandmorty" src="./img/rick-and-morty-min.png" alt="">      
         </div>
+
+        <div id="title-mobile">
+            <img id="logo-mobile" src="./img/rick-and-morty-mobile.png" alt="">      
+        </div>
+
       
         <nav id="navigation-area">
             <ul>
@@ -32,7 +37,9 @@
             </ul>
         </nav>
                  
-        <div id="menu1">
+        <div id="return-filters"> <button>Change Filter</button> </div>
+
+        <div id="menu-charac">
             <main class="main">
                 <nav id="select-filter">
                     <ul id="filters-options">
@@ -206,73 +213,6 @@
             <button id="next-button"> Next </button>
 
         </div>
-
- 
-      
-        <!-- MOBILE VERSION -->
-        <div id="div-mother-mobile">
-            
-            <div id="title-mobile">
-                <img src="./img/rick-and-morty-mobile.png" alt="">
-            </div>
-
-            <nav id="navigation-area-mobile">
-                <button id="button-charac-mobile"> Characters </button>
-            </nav>
-
-            <div id="menu1-mobile">
-                <button id="return-filters">Change filters</button>
-                <main class="main-mobile">
-                    <nav id="select-filter-mobile">
-                        <ul id="filters-options-mobile">
-                            <li>
-                                <button class="select-style-mobile" id="all-button-mobile">
-                                    All characters
-                                </button> 
-                            </li>
-                            <li>
-                                <select class="select-style-mobile" name="" id="status-filter-mobile" > 
-                                    <option value="none"> Status </option>
-                                    <option value="Alive"> Alive </option>
-                                    <option value="Dead"> Dead </option>
-                                    <option value="unknown"> Unknown </option>
-                                </select>
-                            </li>
-                            <li>
-                                <select class="select-style-mobile" name="" id="gender-filter-mobile">
-                                    <option value="none"> Gender </option>
-                                    <option value="Male"> Male </option>
-                                    <option value="Female"> Female </option>
-                                    <option value="Genderless"> Genderless </option>
-                                    <option value="unknown"> Unknown </option>
-                                </select>
-                            </li>
-                            <li>
-                                <select class="select-style-mobile" name="" id="order-filter-mobile">
-                                    <option value="none"> Sort by </option>
-                                    <option value="a-z"> Name: A - Z </option>
-                                    <option value="z-a"> Name: Z - A </option>
-                                </select>
-                            </li>
-                            <!-- Aguardando alteração mobile  
-                            <li>
-                                <form action="">
-                                    <input id="data-in-mobile" placeholder="Search by name..." type="search" incremental="incremental">
-                                </form>   
-                            </li> -->
-                        </ul>
-                    </nav>    
-                  
-                    <div id="percentage-text-mobile"></div>
-        
-                    <section id="get-cards-mobile">
-                        <!-- divs necessárias aos cards (criadas dinamicamente) -->
-                    </section>
-                </main>
-            </div>
-
-        </div>
-
     </div>
 
     <script src="./main.js" type="module"></script>
