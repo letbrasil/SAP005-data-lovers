@@ -218,6 +218,7 @@ body {
 }
 
 #next-button {
+    display: none;
     float: right;
     width: 6%;
 
@@ -241,6 +242,8 @@ body {
 }
 
 #result-button {
+    display: none;
+
     background-color: rgb(63, 63, 63);
     margin-left: 45%;
 
