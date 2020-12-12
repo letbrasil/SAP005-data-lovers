@@ -84,6 +84,10 @@ function showCharacters(){
   divText.innerHTML = ""
   let cards = ""
   
+  document.getElementById("status-filter").value = "none"
+  document.getElementById("order-filter").value = "none"
+  document.getElementById("gender-filter").value = "none"
+  
 	for (let character of data.results){
     cards += `
       <div class="all-cards">
@@ -128,6 +132,9 @@ chooseStatus.addEventListener("change", cardStatus)
 const jsDocs = data.results
 
 function cardStatus(){ 
+
+  document.getElementById("gender-filter").value = "none"
+  document.getElementById("order-filter").value = "none"
 
   const statusQuant = filterStatus(jsDocs, chooseStatus.value).length       
   const calcStatus = Math.round(((statusQuant/493)*100));
@@ -174,6 +181,9 @@ let chooseGender = document.getElementById("gender-filter")
 chooseGender.addEventListener("change", cardGender)
 
 function cardGender(){
+  document.getElementById("status-filter").value = "none"
+  document.getElementById("order-filter").value = "none"
+
 
   const genderQuant = filterGender(jsDocs, chooseGender.value).length       
   const calcGender = Math.round(((genderQuant/493)*100));
@@ -223,6 +233,9 @@ orderFilter.addEventListener("change", cardOrder)
 
 function cardOrder(){
   let cards = ""
+
+  document.getElementById("status-filter").value = "none"
+  document.getElementById("gender-filter").value = "none"
 
   for(let finder of filterOrder(jsDocs, orderFilter.value)){
     cards += `
