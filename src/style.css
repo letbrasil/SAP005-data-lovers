@@ -6,6 +6,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 #title-mobile {
     display: none;
 }
@@ -50,6 +51,7 @@ body {
 #menu-charac {
     display: none;
 }
+
 #return-filters {
     display: none;
 }
@@ -130,7 +132,6 @@ body {
 .all-cards:hover .card-info {
     transform: rotateY(180deg); /* Passando o mouse sobre cartao, o filho dela (container) girará 180 graus no eixo y(eixo vertical) */
 }
-
 
 .card-front {
     position: absolute;
@@ -409,6 +410,7 @@ body {
     #filters-options li {
         width: 100%;
     }
+
     .select-style {
         width: 200px;
         height: 40px;
@@ -531,4 +533,4 @@ body {
         padding: 2px;
         border: 1px solid rgb(75, 74, 74);
     }
-  }
+}
